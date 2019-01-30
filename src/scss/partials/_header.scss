@@ -1,0 +1,146 @@
+body { 
+	border-top: 3px solid $gold;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 0;
+	min-width: 1400px;
+	padding: 0;
+    @include box-sizing();
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.wrapper{
+	margin: auto;
+	max-width: 1400px;
+	width: 100%;
+}
+
+.header{
+	height: auto;
+	overflow: hidden;
+	padding: 35px 0 27px;
+	text-align: center;
+	width: 100%;
+	&__logo{
+		display: inline-block;
+	}
+}
+
+.banner{
+	height: 418px;
+	overflow: hidden;
+	position: relative;
+	width: 100%; 
+	ul{ 
+		left: 0px; 
+		margin: 0;
+		position: relative; 
+		padding: 0;
+		top: 0px;
+		li{
+			float: left; 
+			width: 100%;
+			max-width: 1400px;
+		    height: 418px;
+			position: relative;
+			@include flexbox();
+			@extend %aligncenterflex;
+		    &.banner__slides1{
+		    	background: url('../images/banner1.png');
+		    }
+		    &.banner__slides2{
+		    	background: url('../images/banner2.png');
+		    }
+		    &.banner__slides3{
+		    	background: url('../images/banner3.png');
+		    }
+		    &.banner__slides{
+			    background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+		    }
+			.banner__content{
+				@include flexbox();
+				@extend %aligncenterflex;
+				.title{
+					font-size: $font-60;
+					color: $white;
+					margin: 0 0 47px;
+				}
+				.desc{
+					p{
+						margin: 0;
+						color: $white;
+						font-size: $font-16;
+					}
+				}
+			}
+		}
+	}
+	.navigation { 
+		position: absolute;
+		bottom: 19px; 
+		left: 0; 
+		right: 0;
+		padding: 0;
+		margin: auto;
+		width: 100%;
+		max-width: 1400px;
+		text-align: center;
+		z-index: 20;
+		> div { 
+		    margin: 0 8px;
+		    cursor: pointer;
+		    color: $black;
+		    font-size: 0;
+		    width: 16px;
+		    height: 16px;
+		    background-color: $white;
+		    border-radius: 50%;
+		    display: inline-block;
+		    padding: 0;
+		    &.active {
+				background-color: $gold; 
+			}
+		}
+	}
+	a.control_prev, a.control_next {
+		bottom: 0;
+		cursor: pointer;
+		display: block;
+		height: 48px;
+		margin: auto;
+		position: absolute;
+		top: 0;
+		width: 30px;
+		z-index: 10;
+	}
+	a.control_prev:hover, a.control_next:hover {
+		opacity: 1;
+		-webkit-transition: all 0.2s ease;
+	}
+	a.control_prev {
+		left: 160px;
+		right: auto;
+		&:before{
+			content: '';
+			background: url('../images/banner-arrow-left.png') no-repeat 0 0;
+			width: 30px;
+			height: 48px;
+			display: block;
+		}
+	}
+	a.control_next {
+		right: 160px;
+		left: auto;
+		&:before{
+			content: '';
+			background: url('../images/banner-arrow-right.png') no-repeat 0 0;
+			width: 30px;
+			height: 48px;
+			display: block;
+		}
+	}
+}

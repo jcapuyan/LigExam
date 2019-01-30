@@ -1,0 +1,56 @@
+.backtotop{
+	margin: 0 auto 20px;
+	max-width: 1080px;
+	overflow: hidden;
+	position: relative;
+}
+
+#backtotop-btn{
+	cursor: pointer;
+	float: right;
+	background: url('../images/arrow-up.png') no-repeat 0 0;
+	height: 14px;
+	position: relative;
+	width: 24px;
+}
+
+.footer{
+	background: $black;
+	padding: 15px 0;
+	&__container{
+		max-width: 1080px;
+		margin: auto;
+		overflow: hidden;
+	}
+	&__left,
+	&__right{
+		width: 50%;
+		height: auto;
+		overflow: hidden;
+		color: $white;
+	}
+
+	&__left{
+		float: left;
+		ul{
+			padding: 0;
+			margin: 0;
+			li{
+				list-style: none;
+				font-size: $font-13;
+				display: inline-block;
+				margin: 0 15px 0 0;
+				a{
+					color: $white;
+					text-decoration: none;
+					@include transition(all .2s);
+				}
+			}
+		}
+	}
+	&__right{
+		float: right;
+		font-size: $font-14;
+		text-align: right;
+	}
+}
